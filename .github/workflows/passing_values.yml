@@ -24,10 +24,11 @@ jobs:
       - name: Make a sentence
         id: sentence_maker
         run: |
-            # USTAW ZMIENNĄ ŚRODOWISKOWĄ
+            echo "message=hello" >> $GITHUB_ENVS
 
   consumer:
     runs-on: ubuntu-latest
+    needs: producer
     steps:
       - name: Print the message
         run: |
