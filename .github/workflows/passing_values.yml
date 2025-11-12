@@ -20,11 +20,13 @@ jobs:
         
   producer:
     runs-on: ubuntu-latest
+    outputs:
+          message: ${{ steps.sentence_maker.outputs.message }}
     steps:
       - name: Make a sentence
         id: sentence_maker
         run: |
-            echo "message=hello" >> $GITHUB_ENVS
+            echo "message=hello" >> $GITHUB_OUTPUTS
 
   consumer:
     runs-on: ubuntu-latest
