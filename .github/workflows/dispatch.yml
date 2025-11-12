@@ -13,16 +13,24 @@ on:
           default: info
       environment:
         type: environment
-
+      input:
+        type: string
+        required: true
 
 jobs:
+  
   log-the-inputs:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix: fromJSON(${{ inputs.input}})
+      
+
+    runs-on: ${{ matrix.os }}
     steps:
        -  run: |
             echo "Log level: $LEVEL"
             echo "Tags: $TAGS"
             echo "Environment: $ENVIRONMENT"
+            echo "Version: ${{ matrix.version }}"
           env:
             LEVEL: ${{ inputs.logLevel }}
             TAGS: ${{ inputs.tags }}
