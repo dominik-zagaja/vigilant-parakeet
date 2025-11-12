@@ -1,0 +1,7 @@
+{
+    "logLevel": "info",
+    "maciez": {
+        "version": [13, 2],
+        "os": ["win", "linux"]
+    }
+}
