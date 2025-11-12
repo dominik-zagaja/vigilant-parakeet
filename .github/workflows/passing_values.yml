@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Set color
         id: color-selector
-        run: echo "COLOR=\#000000000" >> $GITHUB_OUTPUT
+        run: echo "COLOR=blue" >> $GITHUB_ENV
       - name: Get color
         run: echo "The selected color is $COLOR"
         
