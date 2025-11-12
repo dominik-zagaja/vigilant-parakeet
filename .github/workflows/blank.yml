@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: test
+        environment: test
 
     steps:
       - name: Get ClI_Secret1
@@ -58,11 +58,11 @@ jobs:
     # ENV_SECRET1
       - name: Get ENV_SECRET1
         env:
-          secret : ${{secrets.ENV_SECRET1}}
+          secret : ${{secrets.ENV_SECRET2}}
         run: |
-          echo "ENV_SECRET1: $secret" >> ENV_SECRET1.txt
+          echo "ENV_SECRET2: $secret" >> ENV_SECRET2.txt
       
       - uses: actions/upload-artifact@v4
         with:
-          name: ENV_SECRET1
-          path: ENV_SECRET1.txt
+          name: ENV_SECRET2
+          path: ENV_SECRET2.txt
