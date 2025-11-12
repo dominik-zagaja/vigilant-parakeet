@@ -1,0 +1,7 @@
+{
+    "logLevel": "info",
+    "input": {
+        "version": [13, 2],
+        "os": ["win", "linux"]
+    }
+}

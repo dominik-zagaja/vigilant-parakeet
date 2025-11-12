@@ -13,7 +13,7 @@ on:
           default: info
       environment:
         type: environment
-      input:
+      maciez:
         type: string
         required: true
 
@@ -21,7 +21,7 @@ jobs:
   
   log-the-inputs:
     strategy:
-      matrix: fromJSON(${{ inputs.input}})
+      matrix: fromJSON(${{ inputs.maciez}})
       
 
     runs-on: ${{ matrix.os }}
@@ -35,3 +35,5 @@ jobs:
             LEVEL: ${{ inputs.logLevel }}
             TAGS: ${{ inputs.tags }}
             ENVIRONMENT: ${{ inputs.environment }}
+
+
